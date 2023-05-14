@@ -1,6 +1,7 @@
 import { API_URLS } from "../utils";
 
 const customFetch = async (url, { body, ...customConfig }) => {
+  console.log(url);
   const headers = {
     "Content-Type": "application/x-www-form-urlencoded",
     Accept: "application/json",
