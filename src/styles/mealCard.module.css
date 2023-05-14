@@ -1,0 +1,46 @@
+.mealsList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-flow: row;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    height: auto;
+    width: 275px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 5px;
+    margin: 10px;
+    overflow: hidden;
+  }
+  .card * {
+    margin: 10px 10px;
+  }
+  .cardImage {
+    margin: 0px 0px;
+    margin-top: -20px;
+    width: 100%;
+    height: 70%;
+    object-fit: contain;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+  
+  .cardTitle {
+    font-weight: bold;
+  }
+  
+  .cardButton {
+    background-color: #6acc00;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
