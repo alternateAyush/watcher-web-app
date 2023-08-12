@@ -1,6 +1,6 @@
 .recipeBook{
-  height: 500px;
-  width: 500px;
+  height: 400px;
+  width: 400px;
   object-fit: cover;
   /* mask-image: linear-gradient(black, transparent); */
   position: fixed;
@@ -8,8 +8,8 @@
   left: 0px;   
 }
 .panToss{
-  height: 500px;
-  width: 500px;
+  height: 400px;
+  width: 400px;
   object-fit: cover;
   /* mask-image: linear-gradient(black, transparent); */
   position: fixed;
