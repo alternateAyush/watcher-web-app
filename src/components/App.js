@@ -1,43 +1,23 @@
 import { useState } from "react";
-import { getMeals } from "../apis";
-import { Home } from "../pages";
-import { Loader } from "./";
-import appLogo from "../images/bibimbap.png";
+
+import { Home,RecipeDetail,Welcome,About } from "../pages";
+import { Navbar} from "./";
+
+import {Routes,Route} from 'react-router-dom';
 import "../styles/styles.css";
 
 function App() {
-  const [loader, setLoader] = useState(false);
-  const [meals, setMeals] = useState([]);
   const [query, setQuery] = useState("");
-  function handleClick(e) {
-    setLoader(true);
-    e.preventDefault();
-    const fetchPosts = async () => {
-      const response = await getMeals(query);
-      if (response.success) {
-        setMeals(response.data.hits);
-        setLoader(false);
-      }
-    };
-    fetchPosts();
-  }
+  const [recipe, setRecipe] = useState({});
   return (
-    <div className="App">
-      <div className="searchBar">
-        <div className="appLogo">
-          <img className="appImg" src={appLogo} alt="" />
-          <span className="appName">Find My Recipe</span>
-        </div>
-        <div className="searchContainer">
-          <input
-            onChange={(e) => {
-              setQuery(e.target.value);
-            }}
-          />
-          <button onClick={handleClick}>Search</button>
-        </div>
-      </div>
-      {loader ? <Loader /> : <Home meals={meals} />}
+    <div className="App">   
+    <Navbar/>  
+      <Routes>
+        <Route path='/' element={<Welcome setQuery={setQuery}/>}></Route>
+        <Route path='/recipe-list' element={<Home query={query} setRecipe={setRecipe}/>}></Route>
+        <Route path='/recipe-detail' element={<RecipeDetail recipe={recipe}/>}></Route>
+        <Route path='/about-us' element={<About/>}></Route>
+      </Routes>      
     </div>
   );
 }
